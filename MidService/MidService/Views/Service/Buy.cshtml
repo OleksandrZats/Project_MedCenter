@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewData["Title"] = "Buy";
+}
+
+<h3>Оформление заявки</h3>
+
+<p>ФИО: @ViewBag.CurentUser.FIO</p>
+<p>Номер телефона: @ViewBag.CurentUser.TNumber</p>
+<p>E-Mail: @ViewBag.CurentUser.Email</p>
+<form method="post" action="">
+    <input type="hidden" name="UserId" value="@ViewBag.CurentUser.UserId" />
+    <input type="hidden" name="ServiceId" value="@ViewBag.Id" />
+    <p>Выбор врача:</p>
+    @{
+        foreach (var doctor in ViewBag.Doctors)
+        {
+            <input type="radio" name="DoctorId" value="@doctor.DoctorId" style="float:left;" /> <p style="margin-left:2%">@doctor.Status , @doctor.FIO</p>
+        }
+    }
+    <input type="submit" value="Подтвердить" />
+</form>
+

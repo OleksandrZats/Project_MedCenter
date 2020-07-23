@@ -1,0 +1,25 @@
+﻿
+@model MidService.ViewModels.LoginModel
+
+@{
+    Layout = null;
+    ViewData["Title"] = "Login";
+}
+<!DOCTYPE html>
+<head>
+    <link href="~/css/bootstrap-reboot.css" rel="stylesheet" type="text/css" />
+    <link href="~/css/bootstrap-grid.css"  rel="stylesheet"type="text/css" />
+    <link href="~/css/bootstrap.css" rel="stylesheet" type="text/css" />
+</head>
+<body class="text-center" style="margin-left:35%; margin-right:35%; margin-top: 2%;">
+<form class="form-signin" asp-action="Login" asp-controller="Account" asp-anti-forgery="true">
+    <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+
+    <label class="sr-only" asp-for="Email">Email address</label>
+    <input id="inputEmail" class="form-control" type="text" asp-for="Email" placeholder="Email address" required="" autofocus="">
+    <label  class="sr-only" asp-for="Password">Password</label>
+    <input id="inputPassword" class="form-control" type="password" asp-for="Password" placeholder="Password" required="">
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+</form>
+<a asp-action="Register" asp-controller="Account">Регистрация</a>
+</body>
